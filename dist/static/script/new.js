@@ -34,7 +34,7 @@ $(function () {
             $placeholder.attr("placeholder", "地推微信号");
             break;
         default:
-            toast.show("参数丢失");
+            //toast.show("参数丢失");
             return false;
             break;
     }
