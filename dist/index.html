@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>89棋牌室</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="气派 "/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="${request.contextPath}/static/imgs/conine-ico.png"/>
+
+
+    <link rel="stylesheet" href="${request.contextPath}/static/style/base.css" />
+    <link rel="stylesheet" href="${request.contextPath}/static/style/page.css" />
+</head>
+<body class="page-index">
+
+<div class="title-bar">
+    <a class="p-right" title="发布" href="javascript:void(0);" id="Js_publish">发布</a>
+</div>
+<div class="menu">
+    <div class="m-item active">
+        <a title="棋牌群" href="${request.contextPath}">首页</a>
+    </div>
+    <div class="m-item">
+        <a title="棋牌群" href="${request.contextPath}/gamegroup/listView">棋牌群</a>
+    </div>
+    <div class="m-item">
+        <a title="棋牌代理" href="${request.contextPath}/gamegroup/listView">棋牌代理</a>
+    </div>
+    <div class="m-item">
+        <a title="棋牌游戏" href="${request.contextPath}/groundpromotion/listView">棋牌游戏</a>
+    </div>
+</div>
+<div class="banner">
+    <a href="#">
+        <img src="${request.contextPath}/static/imgs/b-1.jpg"/>
+    </a>
+</div>
+<div class="content">
+    <div class="list">
+        <div class="l-header">
+            <h3>棋牌群</h3>
+            <div class="l-more">
+                <a href="${request.contextPath}/gamegroup/listView" title="最新">最新</a>
+            </div>
+        </div>
+        <div class="l-body">
+            <#list gameGroupList as item>
+            <a href="${request.contextPath}/gamegroup/detail?id=${item.id}" class="l-item">
+                <div class="l-item-img">
+                    <img src="${item.avatar}">
+                </div>
+                <div class="l-item-title">${item.title}</div>
+                <div class="l-item-type">${item.gameName}群</div>
+                <div class="l-item-address">${item.provinceName} ${item.cityName}</div>
+            </a>
+            </#list>
+        </div>
+        <div class="l-footer">
+            <a href="${request.contextPath}/gamegroup/listView" title="查看更多">查看更多</a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="l-header">
+            <h3>棋牌代理</h3>
+            <div class="l-more">
+                <a href="${request.contextPath}/gameproxy/listView" title="最新">最新</a>
+            </div>
+        </div>
+        <div class="l-body">
+            <#list gameProxyList as item>
+            <a  href="${request.contextPath}/gameproxy/detail?id=${item.id}" class="l-item">
+                <div class="l-item-img">
+                    <img src="${item.avatar}">
+                </div>
+                <div class="l-item-title">${item.title}</div>
+                <div class="l-item-type">${item.gameName}群</div>
+                <div class="l-item-address">${item.provinceName} ${item.cityName}</div>
+            </a>
+            </#list>
+        </div>
+        <div class="l-footer">
+            <a href="${request.contextPath}/gameproxy/listView" title="查看更多">查看更多</a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="l-header">
+            <h3>我是地推</h3>
+            <div class="l-more">
+                <a href="${request.contextPath}/groundpromotion/listView" title="最新">最新</a>
+            </div>
+        </div>
+        <div class="l-body">
+            <#list groundPromotionList as item>
+            <a  href="${request.contextPath}/groundpromotion/detail?id=${item.id}" class="l-item">
+                <div class="l-item-img">
+                    <img src="${item.avatar}">
+                </div>
+                <div class="l-item-title">${item.title}</div>
+                <div class="l-item-type">${item.gameName}群</div>
+                <div class="l-item-address">${item.provinceName} ${item.cityName}</div>
+            </a>
+            </#list>
+        </div>
+        <div class="l-footer">
+            <a href="${request.contextPath}/groundpromotion/listView" title="查看更多">查看更多</a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-title">联系我们</div>
+    <div class="f-logo">
+        <img src="${request.contextPath}/static/imgs/img-logo-big.jpg"/>
+    </div>
+    <div class="f-intro">89棋牌室致力于打造没有中介费的真实棋牌中介平台</div>
+    <div class="f-weixin">
+        <img src="${request.contextPath}/static/imgs/img-weixin.jpg">
+        <h4>商务合作</h4>
+    </div>
+    <div class="f-desc">本平台现承接但不局限于棋牌游戏开发、棋牌游戏合作运营、棋牌游戏营销推广等一系列商务合作。</div>
+    <ul class="f-contact">
+        <li>电话：173 7571 5239</li>
+        <li>Q Q：1444503877</li>
+        <li>微信号：qipaiqun123</li>
+    </ul>
+</div>
+
+<!--发布弹框-->
+<div class="new-dialog" id="Js_dialog">
+    <div class="n-dialog-mask"></div>
+    <div class="n-dialog-box">
+        <div class="d-close" id="Js_dialog_close"></div>
+        <a href="${request.contextPath}/gamegroup/create" class="d-item d-item-1">
+            <h4>发布游戏群信息</h4>
+            <div class="d-item-txt">发布游戏群信息，组织更多棋牌群</div>
+        </a>
+        <a href="${request.contextPath}/gameproxy/create"  class="d-item  d-item-2">
+            <h4>发布棋牌代理信息</h4>
+            <div class="d-item-txt">发布招商、培训等信息</div>
+        </a>
+        <a href="${request.contextPath}/groundpromotion/create"  class="d-item  d-item-3">
+            <h4>发布地推信息</h4>
+            <div class="d-item-txt">发布棋牌地推信息</div>
+        </a>
+    </div>
+</div>
+
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+<script src="${request.contextPath}/static/script/lib/jquery.js"></script>
+<script src="${request.contextPath}/static/script/common.js"></script>
+<script src="${request.contextPath}/static/script/index.js"></script>
+</body>
+</html>

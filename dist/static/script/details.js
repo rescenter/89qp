@@ -1,0 +1,1 @@
+$(function(){var c=$("#Js_publish"),_=$("#Js_dialog"),h=$("#Js_dialog_close");c.click(function(){_.show()}),h.click(function(){_.hide()})});

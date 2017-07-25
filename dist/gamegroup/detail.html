@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>89棋牌室</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="气派 "/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="${request.contextPath}/static/imgs/conine-ico.png"/>
+
+
+    <link rel="stylesheet" href="${request.contextPath}/static/style/base.css" />
+    <link rel="stylesheet" href="${request.contextPath}/static/style/page.css" />
+</head>
+<body class="page-details">
+
+<div class="title-bar">
+    <a href="javascript:history.go(-1)" class="p-left"></a>
+    <a class="p-right" title="发布" href="${request.contextPath}/gamegroup/create">分享</a>
+</div>
+<div class="content">
+    <div class="item-details">
+        <div class="l-item">
+            <div class="l-item-img">
+                <img src="${item.avatar}">
+            </div>
+            <div class="l-item-title">${item.title}</div>
+            <div class="l-item-type">${item.gameName}群</div>
+            <div class="l-item-address">${item.provinceName} ${item.cityName}</div>
+            <div class="l-item-other">
+                <span>分类：${item.gameName}群</span>
+                <span>群主微信号：${item.wxName}</span>
+                <span>更新于${item.createAt?string('yyyy-MM-dd')}</span>
+            </div>
+        </div>
+    </div>
+    <div class="d-body">
+        <div class="d-body-h">群二维码<span>(建议先保存二维码再用微信识别哦)</span></div>
+        <div class="d-body-c">
+            <img src="${item.wxQrcode}" align="群主二维码">
+        </div>
+        <div class="d-body-intro">
+            <h4>产品简介</h4>
+            <div>${item.desc}</div>
+        </div>
+    </div>
+    <div class="d-footer btn btn-primary">
+        <a href="javascript:void(0);" id="Js_publish">我也要发布</a>
+    </div>
+
+    <!--发布弹框-->
+    <div class="new-dialog" id="Js_dialog">
+        <div class="n-dialog-mask"></div>
+        <div class="n-dialog-box">
+            <div class="d-close" id="Js_dialog_close"></div>
+            <a href="new.html?types=gameGroup" class="d-item d-item-1">
+                <h4>发布游戏群信息</h4>
+                <div class="d-item-txt">发布游戏群信息，组织更多棋牌群</div>
+            </a>
+            <a href="new.html?types=gameAgent"  class="d-item  d-item-2">
+                <h4>发布棋牌代理信息</h4>
+                <div class="d-item-txt">发布招商、培训等信息</div>
+            </a>
+            <a href="new.html?types=gamePush"  class="d-item  d-item-3">
+                <h4>发布地推信息</h4>
+                <div class="d-item-txt">发布棋牌地推信息</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+<script src="${request.contextPath}/static/script/lib/jquery.js"></script>
+<script src="${request.contextPath}/static/script/common.js"></script>
+<script src="${request.contextPath}/static/script/details.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>89棋牌室</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="气派 "/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="${request.contextPath}/static/imgs/conine-ico.png"/>
+
+
+    <link rel="stylesheet" href="${request.contextPath}/static/style/base.css" />
+    <link rel="stylesheet" href="${request.contextPath}/static/style/page.css" />
+</head>
+<body class="page-list">
+
+<div class="title-bar" id="titleBar">
+    <h2>棋牌群</h2>
+    <a href="javascript:history.go(-1)" class="p-left"></a>
+    <a title="筛选" href="javascript:void(0)" class="p-right" id="btnFilter">筛选</a>
+</div>
+<div class="menu">
+    <div class="m-item">
+        最新
+    </div>
+</div>
+<div class="banner">
+    <a href="#">
+        <img src="${request.contextPath}/static/imgs/b-1.jpg"/>
+    </a>
+</div>
+<div class="content" id="wrapper">
+    <div class="list" id="scroller">
+        <div class="l-body" id="list">
+            <#list gameGroupPage.content as item>
+            <div class="l-item">
+                <div class="l-item-img">
+                    <img src="${item.avatar}">
+                </div>
+                <div class="l-item-title">${item.title}</div>
+                <div class="l-item-type">${item.gameName}群</div>
+                <div class="l-item-address">${item.provinceName} ${item.cityName}</div>
+                <div class="l-item-time">更新于${item.createAt?string('yyyy-MM-dd')}</div>
+            </div>
+            </#list>
+        </div>
+        <div id="pull_refresh">
+            <div id="arrow">上拉加载数据</div>
+        </div>
+    </div>
+</div>
+
+<!--筛选-->
+<div id="filter" class="filter">
+    <div class="f-mask"></div>
+    <div class="f-box">
+        <div class="f-header">
+            <div class="f-h-item">分类<i></i></div>
+            <div class="f-h-item active">地区<i></i></div>
+        </div>
+        <div class="f-body">
+            <div class="f-content f-types">
+                <div class="f-t-item">斗牛群</div>
+                <div class="f-t-item">斗地主群</div>
+                <div class="f-t-item">跑得快群</div>
+                <div class="f-t-item">德州群</div>
+                <div class="f-t-item">其他群</div>
+            </div>
+            <div class="f-content f-area show">
+                <div class="f-menu">
+                    <div class="f-m-f">省份</div>
+                    <div class="f-m-s">市级</div>
+                </div>
+                <div class="f-section">
+                    <ul id="areaFirst" class="f-a-f">
+                        <li class="active">全部</li>
+                        <li>北京</li>
+                        <li>上海</li>
+                    </ul>
+                    <div  id="areaSecond" class="f-a-s">
+                        <ul>
+                            <li>全部</li>
+                            <li class="active">北京</li>
+                            <li>上海</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f-footer">
+            <div class="f-btn-reset">重置</div>
+            <div class="f-btn-sure">确定</div>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+<script src="${request.contextPath}/static/script/lib/jquery.js"></script>
+<script src="${request.contextPath}/static/script/lib/AlloyTouch/transform.js"></script>
+<script src="${request.contextPath}/static/script/lib/AlloyTouch/alloy_touch.css.js"></script>
+<script src="${request.contextPath}/static/script/lib/AlloyTouch/alloy_touch.js"></script>
+<script src="${request.contextPath}/static/script/common.js"></script>
+<script src="${request.contextPath}/static/script/list.js"></script>
+</body>
+</html>
